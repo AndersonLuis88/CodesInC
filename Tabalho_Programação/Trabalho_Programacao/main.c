@@ -37,7 +37,7 @@ int main()
     {
 
         menu();
-
+        printf("\n\nDIGITE SUA OPÇÃO: ");
         scanf("%d", &op);
         fflush(stdin);
         system ("cls");
@@ -58,7 +58,7 @@ int main()
             break;
 
         case 3:
-            ordemCrescente(cadastro);
+            ordemDecrescente(cadastro);
             system("pause");
             break;
 
@@ -89,8 +89,8 @@ void menu()
 
     printf("\t********Menu********\n\n\n");
     printf("1. Cadastrar Produto\n");
-    printf("2. Ordem Crescente\n");
-    printf("3. Ordem Decrescente\n");
+    printf("2. Ordem Crescente (Valor com desconto)\n");
+    printf("3. Ordem Decrescente (Valor com desconto)\n");
     printf("4. Ordenar por Nome\n");
     printf("0. Sair\n");
 
@@ -228,29 +228,29 @@ void ordemCrescente()
 void ordemDecrescente()
 {
 
-    char aux[30];
-    float preco, max, per;
+    char aux2[30];
+    float preco2, max2, per2;
     for( int i = 1; i < tam; i++ )
     {
         for( int j = i; j > 0; j-- )
         {
             if(cadastro[j].maxDesconto > cadastro[j-1].maxDesconto)
             {
-                strcpy(aux,cadastro[j].nome);
+                strcpy(aux2,cadastro[j].nome);
                 strcpy(cadastro[j].nome,cadastro[j-1].nome);
-                strcpy(cadastro[j-1].nome,aux);
+                strcpy(cadastro[j-1].nome,aux2);
 
-                preco = cadastro[j].preco;
+                preco2 = cadastro[j].preco;
                 cadastro[j].preco = cadastro[j-1].preco;
-                cadastro[j-1].preco = preco;
+                cadastro[j-1].preco = preco2;
 
-                per = cadastro[j].maxPercent;
+                per2 = cadastro[j].maxPercent;
                 cadastro[j].maxPercent = cadastro[j-1].maxPercent;
-                cadastro[j-1].maxPercent = per;
+                cadastro[j-1].maxPercent = per2;
 
-                max = cadastro[j].maxDesconto;
+                max2 = cadastro[j].maxDesconto;
                 cadastro[j].maxDesconto = cadastro[j-1].maxDesconto;
-                cadastro[j-1].maxDesconto = max;
+                cadastro[j-1].maxDesconto = max2;
 
             }
         }
