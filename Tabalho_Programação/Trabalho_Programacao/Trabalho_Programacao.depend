@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1559241729 source:e:\00.estudos\3ª_fase\programação i\tabalho_programação\trabalho_programacao\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<locale.h>
+	<windows.h>
+
