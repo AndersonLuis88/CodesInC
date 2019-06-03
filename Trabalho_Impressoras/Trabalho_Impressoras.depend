@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1559530090 source:e:\00.estudos\3ª_fase\estruturas de dados\trabalho_impressoras\trabalho_impressoras\main.c
+	"stdio.h"
+	"stdlib.h"
+	"locale.h"
+	"windows.h"
+
