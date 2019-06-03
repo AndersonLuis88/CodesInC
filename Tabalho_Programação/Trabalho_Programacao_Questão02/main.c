@@ -82,7 +82,7 @@ int numero(int num1){
     scanf("%d", &num1);
     return num1;
 };
-
+/* RETORNA VERDADEIRO SE O NÚMERO FOR PRIMO. */
 bool Primo(int num2){
 
     int cont=0;
@@ -102,7 +102,7 @@ bool Primo(int num2){
     return v;
  }
 };
-
+/* EXIBE OS NÚMEROS PRIMOS, ATÉ O VALOR DIGITADO. */
 int quantPrimo(int num2){
     bool vv=true;
     for(int i=2;i<=num2;i++){
@@ -112,7 +112,7 @@ int quantPrimo(int num2){
     }
 
 };
-
+/* RETORNA O PRIMO MAIS PRÓXIMO, DO VALOR DIGITADO. */
 void primoProximo(int num2){
 
     bool vv=true;

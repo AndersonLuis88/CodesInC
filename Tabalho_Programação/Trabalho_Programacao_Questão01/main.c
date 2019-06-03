@@ -25,7 +25,7 @@ typedef struct
     float maxPercent;
     float maxDesconto;
 }Dados;
-
+/* CRIAÇÃO DA STRUCT GLOBAL. */
 Dados cadastro[tam];
 
 
@@ -135,7 +135,7 @@ void telaExibi()
 
 
 
-
+/* CADASTRA DADOS NA STRUCT. */
 void cadastrar()
 {
     float valor=0.0, perc;
@@ -156,7 +156,7 @@ void cadastrar()
     }
 };
 
-
+/* ORDENA OS DADOS, A PARTIR DO NOME CADASTRADO. */
 void ordemNome()
 {
     //Dados ordemNome[tam];
@@ -190,7 +190,7 @@ void ordemNome()
     exibiStruct(cadastro);
 
 };
-
+/* ORDENA OS DADOS, EM ORDEM CRESCENTE,PELO MÁXIMO DESCONTO. */
 void ordemCrescente()
 {
 
@@ -224,7 +224,7 @@ void ordemCrescente()
     exibiStruct(cadastro);
 
 };
-
+/* ORDENA OS DADOS, EM ORDEM DECRESCENTE,PELO MÁXIMO DESCONTO. */
 void ordemDecrescente()
 {
 

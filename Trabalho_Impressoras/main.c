@@ -67,6 +67,7 @@ impressora *pop(impressora *PILHA){
 
 
 impressora *ad_impressora(impressora *inicio){
+    /* FUNÇÃO PARA ADICIONAR E ORDENAR AS IMPRESSÕES, CONFORME O GRAU DE PRIORIDADE */
 	impressora *temp = inicio;
 	int ad;
 	system("cls");
@@ -77,10 +78,12 @@ impressora *ad_impressora(impressora *inicio){
 		ads = ad;
 		fflush(stdin);
 	}while(ad<0||ad>4);
+	/* SE FOR A PRIMEIRA INSERÇÃO A IMPRESSÃO, CRIA UMA STRUCT DE IMPRESSÕES */
 	if(inicio==NULL){
 		inicio = criar();
 		inicio->id_impressora = ad;
 	}
+	/* A PARTIR DA SEGUNDA INSERÇÃO, VERIFICA SE O ANTERIOR TEM PRIORIDADE MENOR, PARA EFETUAR A TROCA NA PILHA.  */
 	else if(ad>=inicio->id_impressora){
 		inicio = criar();
 		inicio->id_impressora = ad;
@@ -102,13 +105,14 @@ impressora *ad_impressora(impressora *inicio){
 
 void imprimir(impressora *inicio){
 	system("cls");
+	/* VERIFICA SE ESTÁ VAZIA A FILA. */
 	if(inicio==NULL){
 		printf("=== Fila de Impressão ===\n\n\nNão tem impressão para fila de espera no momento!\n\n\n");
 		telaFim();
 	}
+	/* CASO NÃO ESTEJA VAZIA, EXECUTA O ELSE */
 	else{
 		impressora *temp = inicio, *prox;
-
 	while(cc != 2){
 
 		printf("=== Fila de Impressão ===\n\n\n");
@@ -117,7 +121,7 @@ void imprimir(impressora *inicio){
 			temp = temp->proximo;
 		}
 		printf("\n\n");
-
+        /* IMPRESSÃO DE FORMA MANUAL, PARA OBSERVAÇÃO DE COMO FUNCIONA A PILHA EM EXECUÇÃO. */
 		printf("1. Imprimir Primeiro Item\n\n");
         printf("2. Retornar Menu Principal\n\n");
         scanf("%d", &cc);
@@ -135,6 +139,7 @@ void imprimir(impressora *inicio){
 }
 
 void menu(impressora *inicio){
+    /* MENU INICIAL */
 	int var_menu;
 	do{
 		system("cls");
